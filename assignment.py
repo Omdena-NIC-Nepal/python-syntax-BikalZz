@@ -7,7 +7,8 @@ def format_string(name, age):
     Returns:
         str: Formatted string
     """
-    pass
+    string = f"My name is {name} and I am {age} years old"
+    return string
 
 def conditional_check(number):
     """
@@ -17,7 +18,14 @@ def conditional_check(number):
     Returns:
         str: "Greater", "Lesser", or "Equal"
     """
-    pass
+    result = ""
+    if number == 10:
+        result = "Equal"
+    elif number > 10:
+        result = "Greater"
+    elif number < 10:
+        result = "Lesser"
+    return result
 
 def loop_sum(n):
     """
@@ -27,7 +35,10 @@ def loop_sum(n):
     Returns:
         int: Sum of numbers
     """
-    pass
+    summation = 0
+    for i in range(1,n+1):
+        summation += i
+    return summation
 
 def list_operations(numbers):
     """
@@ -37,7 +48,14 @@ def list_operations(numbers):
     Returns:
         tuple: (sum, max, min)
     """
-    pass
+    if numbers:
+        sum_of_numbers = sum(numbers)
+        max_in_numbers = max(numbers)
+        min_in_numbers = min(numbers)
+    else:
+        print("The list is empty.")
+    tuple_of_numbers = (sum_of_numbers, max_in_numbers, min_in_numbers)
+    return tuple_of_numbers
 
 def dict_operations(students_dict):
     """
@@ -47,7 +65,11 @@ def dict_operations(students_dict):
     Returns:
         list: Names of students with scores > 80
     """
-    pass
+    name_list = []
+    for key, value in students_dict.items():
+        if value > 80:
+            name_list.append(key)
+    return name_list
 
 def set_operations(list1, list2):
     """
@@ -58,7 +80,9 @@ def set_operations(list1, list2):
     Returns:
         set: Common elements
     """
-    pass
+    set1 = set(list1)
+    set2 = set(list2)
+    return set1 & set2
 
 def arithmetic_ops(a, b):
     """
@@ -69,7 +93,15 @@ def arithmetic_ops(a, b):
     Returns:
         dict: Results of arithmetic operations
     """
-    pass
+    dictionary_arithmetic ={}
+    dictionary_arithmetic["sum"] = a + b
+    dictionary_arithmetic["difference"] = a - b
+    dictionary_arithmetic["product"] = a * b
+    try:
+        dictionary_arithmetic["quotient"] = a / b
+    except ZeroDivisionError:
+        dictionary_arithmetic["quotient"] = "Cannot divide by zero."
+    return dictionary_arithmetic
 
 def logical_ops(x, y):
     """
@@ -80,7 +112,11 @@ def logical_ops(x, y):
     Returns:
         dict: Results of logical operations
     """
-    pass
+    dictionary_logical = {}
+    dictionary_logical["and"] = x and y
+    dictionary_logical["or"] = x or y
+    dictionary_logical["not_x"] = not x
+    return dictionary_logical
 
 def bitwise_ops(a, b):
     """
@@ -91,4 +127,8 @@ def bitwise_ops(a, b):
     Returns:
         dict: Results of bitwise operations
     """
-    pass
+    dictionary_bitwise = {}
+    dictionary_bitwise["and"] = a & b
+    dictionary_bitwise["or"] = a | b
+    dictionary_bitwise["xor"] = a ^ b
+    return dictionary_bitwise
